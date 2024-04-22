@@ -1,0 +1,17 @@
+{% extends 'account.html' %}
+
+{% block content %}
+  <form method="post" class="w-full flex flex-col items-start gap-8">
+    {% csrf_token %}
+    <div class="w-full flex flex-col items-center">
+      <h2 class="text-2xl font-bold">Login</h2>
+      <span class="italic text-slate-600 text-sm" style="font-variant: small-caps;">enter your credentials below</span>
+    </div>
+    <div class="w-full flex flex-col gap-2">
+      <input required name="username" type="text" class="w-full rounded-md px-4 py-2 border-slate-400" placeholder="Username" />
+      <input required name="password" type="password" class="w-full rounded-md px-4 py-2 border-slate-400" placeholder="Password" />
+    </div>
+    <button class="w-full py-2 text-center font-bold bg-gray-500 hover:bg-gray-800 text-white rounded transition-all">Submit</button>
+    <span class="font-semibold text-xs">Need an account? <a href="{% url 'account:signup-view' %}" class="underline">Register here</a></span>
+  </form>
+{% endblock %}

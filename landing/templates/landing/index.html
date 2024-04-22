@@ -1,0 +1,29 @@
+{% extends 'landing.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="w-full min-h-96 bg-black text-white font-semibold aspect-[2.4] p-[10%] flex flex-col items-center md:items-start justify-center gap-1">
+    <span class="text-xs md:text-base">Pursue your passion</span>
+    <h2 class="w-5/6 md:w-4/6 text-3xl md:text-5xl font-serif capitalize text-center md:text-left">bayero university, kano</h2>
+
+    <a href="{% url 'account:signup-view' %}" class="px-6 py-2 text-xs md:text-base uppercase bg-blue-600 mt-8">get started</a>
+  </section>
+
+  <section class="w-full flex flex-wrap gap-10 px-[8%]">
+    <div class="w-full flex items-center justify-center text-center px-[10%] text-blue-700 flex-none">
+      <h2 class="text-md md:text-4xl">“AND ABOVE EVERY POSSESSOR OF KNOWLEDGE, THERE IS THE ONE MORE LEARNED.”</h2>
+    </div>
+    <div class="basis-80 grow flex flex-col items-start justify-center gap-8">
+      <p class="">Bayero University has evolved from a small college running Advanced Level training programmes to one of the respected Nigerian Universities, recognized beyond the shores of the country.</p>
+      <p class="">The seed of Bayero University Kano was the Ahmadu Bello College set up in 1960, located within the School for Arabic Studies (SAS), in the old city of Kano. With the establishment of Ahmadu Bello University, Zaria, in 1962, it was renamed Abdullahi Bayero College. In 1964 it moved to a temporary site at the old Kano Airport Hotel, admitting its first set of ten undergraduate students for a B.A. degree programme of Ahmadu Bello University.</p>
+      <a href="{% url 'landing:about-view' %}" class="px-8 py-1 rounded bg-blue-800 text-white uppercase">read more</a>
+    </div>
+    <div class="basis-80 grow">
+      <img src="{% static 'images/about.jpg' %}" alt="" class="w-full rounded-md" />
+    </div>
+  </section>
+
+  <section class="w-hull h-96 relative overflow-auto">
+    <img src="{% static 'images/about.jpg' %}" alt="" class="brightness-50 absolute w-full h-full object-cover" />
+  </section>
+{% endblock %}

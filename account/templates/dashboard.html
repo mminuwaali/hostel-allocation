@@ -1,0 +1,25 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% tailwind_css %}
+    <meta charset="UTF-8" />
+    <title>Authentication</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="flex w-screen h-screen from-slate-300 to-slate-700 from-35% to-0% bg-gradient-to-b">
+    <aside class="flex flex-col p-4 gap-4 basis-48 h-full bg-white bg-opacity-80 backdrop-blur-md shadow-md" style="font-variant: small-caps;">
+      <nav class="w-full grow flex flex-col gap-2 text-white">
+        <a href="{% url 'account:index-view' %}" class="w-full py-1 px-4 rounded bg-blue-500">dashboard</a>
+        <a href="{% url 'account:hostel-view' %}" class="w-full py-1 px-4 rounded bg-blue-500">hostel</a>
+      </nav>
+      <a href="{% url 'account:signout-view' %}" class="bg-red-500 text-white font-semibold px-8 py-1 rounded transition-all hover:brightness-110">log out</a>
+    </aside>
+    <main class="grow flex flex-col items-center p-10 overflow-auto">
+      {% block content %}
+
+      {% endblock %}
+    </main>
+    {% include 'components/error.html' %}
+  </body>
+</html>

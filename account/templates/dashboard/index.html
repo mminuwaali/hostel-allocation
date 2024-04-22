@@ -1,0 +1,61 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+  <section class="w-full h-40 rounded-md bg-blue-500 p-4 relative flex flex-none items-end justify-center">
+    <div class="w-56 aspect-2 rounded shadow-md bg-white absolute bottom-0 translate-y-1/2"></div>
+  </section>
+
+  <section class="w-full flex flex-col mt-20 p-4">
+    <div class="w-full flex flex-col gap-4">
+      <table class="w-full">
+        <caption class="capitalize text-left text-lg text-white">basic information</caption>
+        <tbody>
+          <tr class="bg-white bg-opacity-20 border-b border-b-slate-400">
+            <td class="p-2 text-left">First name: {{ user.first_name }}</td>
+            <td class="p-2 text-right">Last name: {{ user.last_name }}</td>
+          </tr>
+          <tr class="bg-white bg-opacity-20 border-b border-b-slate-400">
+            <td class="p-2 text-left">Email: {{ user.email }}</td>
+            <td class="p-2 text-right">username: {{ user.username }}</td>
+          </tr>
+          <tr class="bg-white bg-opacity-20 border-b border-b-slate-400">
+            <td class="p-2 text-left">Gender: {{ user.student.gender }}</td>
+            <td class="p-2 text-right">DOB: {{ user.student.date_of_birth }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="w-full">
+        <caption class="capitalize text-left text-lg text-white">next of kin</caption>
+        <tbody>
+          <tr class="bg-white bg-opacity-20 border-b border-b-slate-400">
+            <td class="p-2 text-left">First name: {{ user.kin.first_name }}</td>
+            <td class="p-2 text-right">Last name: {{ user.kin.last_name }}</td>
+          </tr>
+          <tr class="bg-white bg-opacity-20 border-b border-b-slate-400">
+            <td class="p-2 text-left">Email: {{ user.kin.email }}</td>
+            <td class="p-2 text-right">username: mminuwaali</td>
+          </tr>
+          <tr class="bg-white bg-opacity-20 border-b border-b-slate-400">
+            <td class="p-2 text-left">Phone number: {{ user.kin.phone_number }}</td>
+            <td class="p-2 text-right">Relationship: {{ user.kin.relationship }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="w-full">
+        <caption class="capitalize text-left text-lg text-white">educational information</caption>
+        <tbody>
+          <tr class="bg-white bg-opacity-20 border-b border-b-slate-400">
+            <td class="p-2 text-left">Faculty: {{ user.student.department.faculty.name }}</td>
+            <td class="p-2 text-right">Department: {{ user.student.department.name }}</td>
+          </tr>
+          <tr class="bg-white bg-opacity-20 border-b border-b-slate-400">
+            <td class="p-2 text-left">Level: {{ user.student.level.level }}</td>
+            <td class="p-2 text-right">Session: {{ user.student.session.title }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}

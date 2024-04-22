@@ -1,0 +1,20 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% tailwind_css %}
+    <meta charset="UTF-8" />
+    <title>Authentication</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="w-screen h-screen from-slate-300 to-slate-700 from-35% to-0% bg-gradient-to-b p-[8%_15%] overflow-hidden flex items-center justify-center before:absolute before:inset-10 before:inset-t-1/2 before:bg-black before:bg-opacity-30 before:backdrop-blur-md before:shadow-xl before:rounded-xl">
+    <a href="{% url 'landing:index-view' %}" class="text-white fixed top-14 left-20 z-20 font-semibold text-md"><span class="text-xl text-slate-800 font-black">F</span>abriland</a>
+
+    <main class="w-96 p-4 py-6 rounded-md bg-white shadow-md z-10">
+      {% block content %}
+
+      {% endblock %}
+    </main>
+    {% include 'components/error.html' %}
+  </body>
+</html>

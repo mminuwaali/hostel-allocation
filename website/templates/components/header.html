@@ -1,0 +1,19 @@
+{% load tailwind_tags %}
+{% tailwind_css %}
+
+<header class="fixed top-10 z-50 w-11/12 p-2 px-[8%] bg-white bg-opacity-60 flex justify-between gap-4 backdrop-blur-md text-xs md:text-sm">
+  <a href="{% url 'landing:index-view' %}" class="text-white font-semibold text-md"><span class="text-xl text-slate-800 font-black">F</span>abriland</a>
+
+  <nav class="grow flex items-center justify-end gap-4" style="font-variant: small-caps;">
+      <a href="{% url 'landing:about-view' %}" class="">about us</a>
+  </nav>
+
+  <nav class="flex items-center justify-end gap-4" style="font-variant: small-caps;">
+    {% if user.is_authenticated %}
+      <a href="{% url 'account:signout-view' %}" class="px-6 bg-blue-500 text-white font-bold rounded transition-all hover:brightness-110">sign out</a>
+    {% else %}
+      <a href="{% url 'account:signin-view' %}" class="">sign in</a>
+      <a href="{% url 'account:signup-view' %}" class="px-6 bg-blue-500 text-white font-bold rounded transition-all hover:brightness-110">sign up</a>
+    {% endif %}
+  </nav>
+</header>
